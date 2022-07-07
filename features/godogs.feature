@@ -3,7 +3,11 @@ Feature: eat godogs
   As a hungry gopher
   I need to be able to eat godogs
 
-  Scenario: Eat 5 out of 12
-    Given there are 12 godogs
-    When I eat 5
-    Then there should be 7 remaining
+  Scenario: Eating godogs
+    Given there are <start> godogs
+    When I eat <eat>
+    Then there should be <left> remaining
+    Examples:
+      | start | eat | left |
+      |    12 |   5 |    7 |
+      |    420 |   69 |   351 |
